@@ -116,13 +116,11 @@ The following is a simple, complete glTF asset. It is similar to the assets that
 
 The geometry in this asset is a simple unit square. It is rotated by -45 degrees around the x-axis, to emphasize the effect of the different cameras. Image 15a shows three options for rendering this asset. The first examples use the cameras from the asset. The last example shows how the scene looks from an external, user-defined viewpoint.
 
-
 此资产中的几何图形是一个简单的单位平方。它绕x轴旋转-45度，以强调不同相机的效果。图 15a 显示了用于渲染此资产的三个选项。第一个示例使用资产中的摄像机。最后一个示例显示了从用户定义的外部视点看场景的外观。
 <p align="center">
 <img src="images/cameras.png" /><br>
 <a name="cameras-png"></a>Image 15a: The effect of rendering the scene with different cameras.
 </p>
-
 
 ## Camera definitions
 
@@ -176,8 +174,5 @@ When a camera object has been defined, it may be attached to a `node`. This is a
 The differences between perspective and orthographic cameras and their properties, the effect of attaching the cameras to the nodes, and the management of multiple cameras will be explained in detail in the [Cameras](gltfTutorial_016_Cameras.md) section.
 
 透视相机和正交相机之间的差异及其属性、将相机附加到节点的效果以及多个相机的管理将在相机部分中详细解释。
-
-
-
 
 Previous: [Advanced Material](gltfTutorial_014_AdvancedMaterial.md) | [Table of Contents](README.md) | Next: [Cameras](gltfTutorial_016_Cameras.md)

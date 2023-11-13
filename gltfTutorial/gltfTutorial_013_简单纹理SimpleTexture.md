@@ -118,7 +118,6 @@ Bringing this all together in a renderer will result in the scene rendered in Im
 <a name="simpleTexture-png"></a>Image 15b: A simple texture on a unit square.
 </p>
 
-
 ## The Textured Material Definition
 
 纹理材质定义
@@ -150,7 +149,7 @@ In order to apply a texture to a mesh primitive, there must be information about
 ```javascript
 "baseColorTexture" : {
   "index" : 0,
-  "texCoord": 2  
+  "texCoord": 2
 },
 ```
 In this case, the texture would use the texture coordinates that are contained in the attribute called `TEXCOORD_2`.

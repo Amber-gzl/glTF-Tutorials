@@ -14,7 +14,7 @@ glTF 的目的是定义 3D 资产的传输格式。如前面各节所示，这�
 
 There are different possible representations for the properties of a material, and the *shading model* describes how these properties are processed. Simple shading models, like the [Phong](https://en.wikipedia.org/wiki/Phong_reflection_model) or [Blinn-Phong](https://en.wikipedia.org/wiki/Blinn%E2%80%93Phong_shading_model), are directly supported by common graphics APIs like OpenGL or WebGL. These shading models are built on a set of basic material properties. For example, the material properties involve information about the color of diffusely reflected light (often in the form of a texture), the color of specularly reflected light, and a shininess parameter. Many file formats contain exactly these parameters. For example, [Wavefront OBJ](https://en.wikipedia.org/wiki/Wavefront_.obj_file) files are combined with `MTL` files that contain this texture and color information. Renderers can read this information and render the objects accordingly. But in order to describe more realistic materials, more sophisticated shading and material models are required.
 
-材质的属性有不同的可能表示形式，着色模型描述了如何处理这些属性。简单的着色模型，如Phong或Blinn-Phong，由OpenGL或WebGL等常见的图形API直接支持。这些着色模型建立在一组基本材料属性之上。例如，材质属性涉及有关漫反射光的颜色（通常以纹理的形式）、镜面反射光的颜色和光泽度参数的信息。许多文件格式都包含这些参数。例如，波前 OBJ 文件与包含此纹理和颜色信息的 MTL 文件组合在一起。渲染器可以读取此信息并相应地渲染对象。但为了描述更逼真的材质，需要更复杂的着色和材质模型。
+材质的属性有不同的可能表示形式，着色模型描述了如何处理这些属性。简单的着色模型，如Phong或Blinn-Phong，由OpenGL或WebGL等常见的图形API直接支持。这些着色模型建立在一组基本材料属性之上。例如，材质属性涉及有关漫反射光的颜色（通常以纹理的形式）、镜面反射光的颜色和光泽度参数的信息。许多文件格式都包含这些参数。例如，'Wavefront OBJ' 文件与包含此纹理和颜色信息的'MTL'文件组合在一起。渲染器可以读取此信息并相应地渲染对象。但为了描述更逼真的材质，需要更复杂的着色和材质模型。
 
 ## Physically-Based Rendering (PBR)
 
@@ -68,11 +68,8 @@ The following sections will show how these material properties are encoded in a 
 以下部分将展示如何在 glTF 资产中对这些材质属性进行编码，包括各种材质示例：
 - [A Simple Material](gltfTutorial_011_SimpleMaterial.md)
 - [Textures, Images, and Samplers](gltfTutorial_012_TexturesImagesSamplers.md) that serve as a basis for defining material properties
-- 纹理、图像和采样器，用作定义材料属性的基础
 - [A Simple Texture](gltfTutorial_013_SimpleTexture.md) showing an example of how to use a texture for a material
-- 纹理、图像和采样器，用作定义材料属性的基础
 - [An Advanced Material](gltfTutorial_014_AdvancedMaterial.md) combining multiple textures to achieve a sophisticated surface appearance for the objects
-- 纹理、图像和采样器，用作定义材料属性的基础
 
 
 Previous: [Meshes](gltfTutorial_009_Meshes.md) | [Table of Contents](README.md) | Next: [Simple Material](gltfTutorial_011_SimpleMaterial.md)

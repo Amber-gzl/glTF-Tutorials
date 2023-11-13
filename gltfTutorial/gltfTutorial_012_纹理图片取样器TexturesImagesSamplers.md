@@ -14,7 +14,7 @@ glTF 资产可以定义多个纹理对象，这些对象可以在渲染期间用
 
 There are three top-level arrays for the definition of textures in the glTF JSON. The `textures`, `samplers`, and `images` dictionaries contain  [`texture`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-texture),  [`sampler`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#_texture_sampler), and [`image`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-image) objects, respectively. The following is an excerpt from the [Simple Texture](gltfTutorial_013_SimpleTexture.md) example, which will be presented in the next section:
 
-有三个顶级数组用于定义 glTF JSON 中的纹理。纹理、采样器和图像字典分别包含纹理、采样器和图像对象。以下是简单纹理示例的摘录，将在下一节中介绍：
+有三个顶级数组用于定义 glTF JSON 中的纹理。textures、samplers和images字典分别包含纹理、采样器和图像对象。以下是简单纹理示例的摘录，将在下一节中介绍：
 
 ```javascript
 "textures": [
@@ -41,8 +41,9 @@ There are three top-level arrays for the definition of textures in the glTF JSON
 The `texture` itself uses indices to refer to one `sampler` and one `image`. The most important element here is the reference to the `image`. It contains a URI that links to the actual image file that will be used for the texture. Information about how to read this image data can be found in the section about [image data in `images`](gltfTutorial_002_BasicGltfStructure.md#image-data-in-images).
 
 纹理本身使用索引来引用一个采样器和一个图像。这里最重要的元素是对图像的引用。它包含一个链接到将用于纹理的实际图像文件的 URI。有关如何读取此图像数据的信息，请参阅有关图像中的图像数据的部分。
+（texture的 source 指向的就是图像索引吗）
 
-The next section will show how such a texture definition may be used inside a material. 
+The next section will show how such a texture definition may be used inside a material.
 
 下一节将展示如何在材质中使用此类纹理定义。
 

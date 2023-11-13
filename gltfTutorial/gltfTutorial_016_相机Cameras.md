@@ -14,7 +14,6 @@ The example in the [Simple Cameras](gltfTutorial_017_SimpleCameras.md) section s
 
 There are two kinds of cameras: *Perspective* cameras, where the viewing volume is a truncated pyramid (often referred to as "viewing frustum"), and *orthographic*  cameras, where the viewing volume is a rectangular box. The main difference is that rendering with a *perspective* camera causes a proper perspective distortion, whereas rendering with an *orthographic* camera causes a preservation of lengths and angles.
 
-
 有两种类型的相机：透视相机，其中观看体积是截断的金字塔（通常称为“视锥”）和正交相机，其中观看体积是矩形框。主要区别在于，使用透视相机渲染会导致适当的透视失真，而使用正交相机渲染会导致长度和角度的保留。
 
 The example in the [Simple Cameras](gltfTutorial_015_SimpleCameras.md) section contains one camera of each type, a perspective camera at index 0 and an orthographic camera at index 1:
@@ -44,7 +43,6 @@ The example in the [Simple Cameras](gltfTutorial_015_SimpleCameras.md) section c
 ],
 ```
 
-
 The `type` of the camera is given as a string, which can be `"perspective"` or  `"orthographic"`. Depending on this type, the `camera` object contains a [`camera.perspective`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-camera-perspective) object or a [`camera.orthographic`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-camera-orthographic) object. These objects contain additional parameters that define the actual viewing volume.
 
 相机的类型以字符串形式给出，可以是“透视”或“正交”。根据此类型，相机对象包含摄像机透视对象或摄像机正交对象。这些对象包含定义实际查看音量的其他参数。
@@ -55,7 +53,7 @@ camera.perspective 对象包含一个 aspectRatio 属性，该属性定义视区
 
 The `camera.orthographic` object contains `xmag` and `ymag` properties. These define the magnification of the camera in x- and y-direction, and basically describe the width and height of the viewing volume.
 
-camera.orthographic 对象包含 xmag 和 ymag 属性。这些定义了相机在xand y方向上的放大倍率，并且基本上描述了观看体积的宽度和高度。
+camera.orthographic 对象包含 xmag 和 ymag 属性。这些定义了相机在x 和 y方向上的放大倍率，并且基本上描述了观看体积的宽度和高度。
 
 Both camera types additionally contain `znear` and `zfar` properties, which are the coordinates of the near and far clipping plane. For perspective cameras, the `zfar` value is optional. When it is missing, a special "infinite projection matrix" will be used.
 
@@ -93,8 +91,7 @@ As shown in the [Scenes and Nodes](gltfTutorial_004_ScenesNodes.md) section, the
 
 When the global transform of the camera node is the identity matrix, then the eye point of the camera is at the origin, and the viewing direction is along the negative z-axis. In the given example, the nodes both have a `translation` about `(0.5, 0.5, 3.0)`, which causes the camera to be transformed accordingly: it is translated about 0.5 in the x- and y- direction, to look at the center of the unit square, and about 3.0 along the z-axis, to move it a bit away from the object.
 
-当相机节点的全局变换为单位矩阵时，相机的视点在原点，观看方向沿负z轴。在给定的示例中，节点都有一个关于 （0.5， 0.5， 3.0） 的平移，这会导致相机相应地变换：它在 xand y 方向上平移约 0.5，以查看单位正方形的中心，沿 z 轴平移约 3.0，使其远离对象。
-
+当相机节点的全局变换为单位矩阵时，相机的视点在原点，观看方向沿负z轴。在给定的示例中，节点都有一个关于 （0.5， 0.5， 3.0） 的平移，这会导致相机相应地变换：它在 x 和 y 方向上平移约 0.5，以查看单位正方形的中心，沿 z 轴平移约 3.0，使其远离对象。
 
 ## Camera instancing and management
 
@@ -107,7 +104,5 @@ glTF 的 JSON 部分中可能定义了多个摄像头。每个相机可以由多
 There is no "default" camera for a glTF asset. Instead, the client application has to keep track of the currently active camera. The client application may, for example, offer a dropdown-menu that allows one to select the active camera and thus to quickly switch between predefined view configurations. With a bit more implementation effort, the client application can also define its own camera and interaction patterns for the camera control (e.g., zooming with the mouse wheel). However, the logic for the navigation and interaction has to be implemented solely by the client application in this case. [Image 15a](gltfTutorial_015_SimpleCameras.md#cameras-png) shows the result of such an implementation, where the user may select either the active camera from the ones that are defined in the glTF asset, or an "external camera" that may be controlled with the mouse.
 
 glTF 资产没有“默认”摄像机。相反，客户端应用程序必须跟踪当前活动的相机。例如，客户端应用程序可能会提供一个下拉菜单，允许人们选择活动摄像机，从而在预定义的视图配置之间快速切换。通过更多的实现工作，客户端应用程序还可以为相机控件定义自己的相机和交互模式（例如，使用鼠标滚轮缩放）。但是，在这种情况下，导航和交互的逻辑必须仅由客户端应用程序实现。图15a显示了这种实现的结果，用户可以从glTF资产中定义的相机中选择活动相机，也可以选择可以用鼠标控制的“外部相机”。
-
-
 
 Previous: [Simple Cameras](gltfTutorial_015_SimpleCameras.md) | [Table of Contents](README.md) | Next: [Simple Morph Target](gltfTutorial_017_SimpleMorphTarget.md)

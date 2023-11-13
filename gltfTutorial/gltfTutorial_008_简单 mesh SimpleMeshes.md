@@ -6,7 +6,7 @@ Previous: [Animations](gltfTutorial_007_Animations.md) | [Table of Contents](REA
 
 A [`mesh`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-mesh) represents a geometric object that appears in a scene. An example of a `mesh` has already been shown in the [minimal glTF file](gltfTutorial_003_MinimalGltfFile.md). This example had a single `mesh` attached to a single `node`, and the mesh consisted of a single [`mesh.primitive`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-mesh-primitive) that contained only a single attribute&mdash;namely, the attribute for the vertex positions. But usually, the mesh primitives will contain more attributes. These attributes may, for example, be the vertex normals or texture coordinates.
 
-网格表示出现在场景中的几何对象。网格的示例已在最小 glTF 文件中显示。此示例将单个网格附加到单个节点，并且网格由仅包含单个属性（即顶点位置的属性）的单个网格组成。但通常，网格基元将包含更多属性。例如，这些属性可以是顶点法线或纹理坐标。
+mesh表示出现在场景中的几何对象。网格的示例已在最小 glTF 文件中显示。此示例将单个网格附加到单个节点，并且网格由仅包含单个属性（即顶点位置的属性）的单个网格组成。但通常，网格基元将包含更多属性。例如，这些属性可以是顶点法线或纹理坐标。
 
 The following is a glTF asset that contains a simple mesh with multiple attributes, which will serve as the basis for explaining the related concepts:
 
@@ -29,7 +29,7 @@ The following is a glTF asset that contains a simple mesh with multiple attribut
       "translation" : [ 1.0, 0.0, 0.0 ]
     }
   ],
-  
+
   "meshes" : [
     {
       "primitives" : [ {
@@ -91,7 +91,6 @@ The following is a glTF asset that contains a simple mesh with multiple attribut
       "min" : [ 0.0, 0.0, 1.0 ]
     }
   ],
-  
   "asset" : {
     "version" : "2.0"
   }
@@ -153,7 +152,7 @@ As can be seen in Image 8a, the mesh is rendered *twice*. This is accomplished b
   ],
 ```
 
-The `mesh` property of each node refers to the mesh that is attached to the node, using the index of the mesh. One of the nodes has a `translation` that causes the attached mesh to be rendered at a different position. 
+The `mesh` property of each node refers to the mesh that is attached to the node, using the index of the mesh. One of the nodes has a `translation` that causes the attached mesh to be rendered at a different position.
 
 每个节点的网格属性是指使用网格的索引附加到节点的网格。其中一个节点具有平移，导致附加的网格在不同的位置渲染。
 

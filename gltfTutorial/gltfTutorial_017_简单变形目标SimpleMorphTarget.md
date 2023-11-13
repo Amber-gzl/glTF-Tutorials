@@ -12,7 +12,6 @@ The following is a minimal example that shows a mesh with two morph targets. The
 
 下面是一个最小示例，显示了具有两个变形目标的网格。此处将总结新元素，下一节将解释 morph 目标的更广泛概念以及如何在运行时应用它们。
 
-
 ```javascript
 {
   "scene": 0,

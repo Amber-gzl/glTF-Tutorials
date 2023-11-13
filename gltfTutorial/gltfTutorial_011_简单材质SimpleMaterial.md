@@ -9,7 +9,7 @@ The examples of glTF assets that have been given in the previous sections contai
 
 This section will start with an example of a very simple material and explain the effect of the different material properties.
 
-本节将从非常简单的材料示例开始，并解释不同材料属性的影响。
+本节将从非常简单的材料示例开始，并解释不同材质属性的影响。
 
 This is a minimal glTF asset with a simple material:
 
@@ -96,7 +96,7 @@ This is a minimal glTF asset with a simple material:
     "version" : "2.0"
   }
 }
-```      
+```
 
 When rendered, this asset will show the triangle with a new material, as shown in Image 11a.
 
@@ -107,16 +107,13 @@ When rendered, this asset will show the triangle with a new material, as shown i
 <a name="simpleMaterial-png"></a>Image 11a: A triangle with a simple material.
 </p>
 
-
 ## Material definition
 
 材料定义
 
-
 A new top-level array has been added to the glTF JSON to define this material: The `materials` array contains a single element that defines the material and its properties:
 
 一个新的顶级数组已添加到glTF JSON中以定义此材料： 材料数组包含一个定义材料及其属性的元素：
-
 
 ```javascript
   "materials" : [
@@ -132,7 +129,7 @@ A new top-level array has been added to the glTF JSON to define this material: T
 
 The actual definition of the [`material`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material) here only consists of the [`pbrMetallicRoughness`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material-pbrmetallicroughness) object, which defines the basic properties of a material in the *metallic-roughness-model*. (All other material properties will therefore have default values, which will be explained later.) The `baseColorFactor` contains the red, green, blue, and alpha components of the main color of the material - here, a bright orange color. The `metallicFactor` of 0.5 indicates that the material should have reflection characteristics between that of a metal and a non-metal material. The `roughnessFactor` causes the material to not be perfectly mirror-like, but instead scatter the reflected light a bit.
 
-此处材质的实际定义仅包含 pbrMetallicRoughness 对象，该对象定义了金属粗糙度模型中材质的基本属性。（因此，所有其他材料属性都将具有默认值，稍后将对此进行解释。baseColorFactor 包含此处材质主色的红色、绿色、蓝色和 alpha 分量，即明亮的橙色。金属因子0.5表示材料应具有介于金属和非金属材料之间的反射特性。粗糙度因子导致材料不是完全像镜面的，而是稍微散射反射光。
+此处材质的实际定义仅包含 pbrMetallicRoughness 对象，该对象定义了金属粗糙度模型中材质的基本属性。（因此，所有其他材料属性都将具有默认值，稍后将对此进行解释。baseColorFactor 包含此处材质主色的红色、绿色、蓝色和 alpha 分量，即明亮的橙色。‘metallicFactor’ = 0.5表示材料应具有介于金属和非金属材料之间的反射特性。粗糙度因子导致材料不是完全像镜面的，而是稍微散射反射光。
 
 ## Assigning the material to objects
 

@@ -2,7 +2,7 @@ Previous: [Simple Texture](gltfTutorial_013_SimpleTexture.md) | [Table of Conten
 
 # An Advanced Material
 
-先进材料
+进阶材质
 
 The [Simple Texture](gltfTutorial_013_SimpleTexture.md) example in the previous section showed a material for which the "base color" was defined using a texture. But in addition to the base color, there are other properties of a material that may be defined via textures. These properties have already been summarized in the [Materials](gltfTutorial_010_Materials.md) section:
 
@@ -11,13 +11,13 @@ The [Simple Texture](gltfTutorial_013_SimpleTexture.md) example in the previous 
 - The *base color*,
 - 基色，
 - The *metallic* value,
-- 金属价值
+- 金属值
 - The *roughness* of the surface,
 - 表面粗糙度
 - The *emissive* properties,
 - 自发光性质，
 - An *occlusion* texture, and
-- 遮挡纹理，以及
+- 遮挡纹理
 - A *normal map*.
 - 法线贴图。
 
@@ -46,6 +46,8 @@ Image 14b shows the effect of the roughness texture: the main part of the bottle
 
 Image 14c highlights the effect of the metallic texture: the bottle reflects the light from the surrounding environment map.
 
+图14c突出了金属纹理的效果：瓶子反射来自周围环境图的光线。
+
 <p align="center">
 <img src="images/advancedMaterial_metallic.png" /><br>
 <a name="advancedMaterial_metallic-png"></a>Image 14c: The influence of the metallic texture.
@@ -53,7 +55,7 @@ Image 14c highlights the effect of the metallic texture: the bottle reflects the
 
 Image 14d shows the emissive part of the texture: regardless of the dark environment setting, the text, which is contained in the emissive texture, is clearly visible.
 
-图14c突出了金属纹理的效果：瓶子反射来自周围环境图的光线。
+图 14d 显示了纹理的自发光部分：无论深色环境设置如何，自发光纹理中包含的文本都清晰可见。
 
 <p align="center">
 <img src="images/advancedMaterial_emissive.png" /><br>
@@ -62,7 +64,7 @@ Image 14d shows the emissive part of the texture: regardless of the dark environ
 
 Image 14e shows the part of the bottle cap for which a normal map is defined: the text appears to be embossed into the cap. This makes it possible to model finer geometric details on the surface, even though the model itself only has a very coarse geometric resolution.
 
-图 14e 显示了瓶盖中定义法线贴图的部分：文本似乎浮雕在瓶盖上。这使得在表面上对更精细的几何细节进行建模成为可能，即使模型本身只有非常粗糙的几何分辨率。
+图 14e 显示了瓶盖中定义法线贴图的部分：文本  **似乎**   浮雕在瓶盖上。这使得在表面上对更精细的几何细节进行建模成为可能，即使模型本身只有非常粗糙的几何分辨率。
 
 <p align="center">
 <img src="images/advancedMaterial_normal.png" /><br>

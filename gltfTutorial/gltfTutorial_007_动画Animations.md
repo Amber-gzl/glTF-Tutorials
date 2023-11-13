@@ -47,7 +47,6 @@ The following is another example of an `animation`. This time, the animation con
   ],
 ```
 
-
 ## Animation samplers
 
 动画采样器
@@ -68,7 +67,7 @@ In order to compute the value of the translation for the current animation time,
 * Let the current animation time be given as `currentTime`.
 * 让当前动画时间作为当前时间给出。
 * Compute the next smaller and the next larger element of the *times* accessor:
-* 计算 time 访问器的下一个较小和下一个较大的元素：
+* 计算 time 存取器的下一个较小和下一个较大的元素：
 
     `previousTime` = The largest element from the *times* accessor that is smaller than the `currentTime`
 
@@ -79,7 +78,7 @@ In order to compute the value of the translation for the current animation time,
     nextTime = 时间访问器中大于当前时间的最小元素
 
 * Obtain the elements from the *translations* accessor that correspond to these times:
-* 从翻译访问器获取与以下时间对应的元素：
+* 从翻译存取器获取与以下时间对应的元素：
 
     `previousTranslation` = The element from the *translations* accessor that corresponds to the `previousTime`
     
@@ -105,7 +104,7 @@ In order to compute the value of the translation for the current animation time,
 
 Imagine the `currentTime` is **1.2**. The next smaller element from the *times* accessor is **0.8**. The next larger element is **1.6**. So
 
-想象一下当前时间是 1.2。时间访问器中的下一个较小元素是 0.8。下一个较大的元素是 1.6。所以
+想象一下当前时间是 1.2。时间存取器中的下一个较小元素是 0.8。下一个较大的元素是 1.6。所以
 
     previousTime = 0.8
     nextTime     = 1.6
@@ -139,10 +138,9 @@ So when the current time is **1.2**, then the `translation` of the node is **(16
 
 所以当当前时间为 1.2 时，节点的平移为 （16.0， 2.0， -0.5）。
 
-
 ## Animation channels
 
-动画频道
+动画通道
 
 The animations contain an array of [`animation.channel`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-animation-channel) objects. The channels establish the connection between the input, which is the value that is computed from the sampler, and the output, which is the animated node property. Therefore, each channel refers to one sampler, using the index of the sampler, and contains an [`animation.channel.target`](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-animation-channel-target). The `target` refers to a node, using the index of the node, and contains a `path` that defines the property of the node that should be animated. The value from the sampler will be written into this property.
 
@@ -239,26 +237,22 @@ Cubic spline interpolation needs more data than just the previous and next keyfr
 These tangent are stored in the animation channel. For each keyframe described by the animation sampler, the animation channel contains 3 elements : 
 
 这些切线存储在动画通道中。对于动画采样器描述的每个关键帧，动画通道包含 3 个元素：
-
  - The input tangent of the keyframe
  - 关键帧的输入切线
  - The keyframe value
  - 关键帧值
  - The output tangent
  - 输出切线
- 
  The input and output tangents are normalized vectors that will need to be scaled by the duration of the keyframe, we call that the deltaTime
 
  输入和输出切线是归一化向量，需要按关键帧的持续时间进行缩放，我们称之为 deltaTime
- 
  ```
      deltaTime = nextTime - previousTime
  ```
- 
  To calculate the value for `currentTime`, you will need to fetch from the animation channel : 
 
  要计算当前时间的值，您需要从动画通道获取：•
- 
+
  - The output tangent direction of `previousTime` keyframe
  - 上一个时间关键帧的输出切线方向
  - The value of `previousTime` keyframe
@@ -268,11 +262,11 @@ These tangent are stored in the animation channel. For each keyframe described b
  - The input tangent direction of `nextTime` keyframe
  - 上一个时间关键帧的输出切线方向
  
-*note: the input tangent of the first keyframe and the output tangent of the last keyframe are totally ignored*
+*note: the nput tangent of the first keyframe and the output tangent of the last keyframe are totally ignored*
 
 注： 第一个关键帧的输入切线和最后一个关键帧的输出切线将被完全忽略
- 
-To calculate the actual tangents of the keyframe, you need to multiply the direction vectors you got from the channel by `deltaTime` 
+
+To calculate the actual tangents of the keyframe, you need to multiply the direction vectors you got from the channel by `deltaTime`
 
 要计算关键帧的实际切线，您需要将从通道获得的方向矢量乘以 deltaTime
 
@@ -280,12 +274,12 @@ To calculate the actual tangents of the keyframe, you need to multiply the direc
     previousTangent = deltaTime * previousOutputTangent
     nextTangent = deltaTime * nextInputTangent
 ```
- 
+
 The mathematical function is described in the [Appendix C](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#appendix-c-interpolation) of the glTF 2.0 specification.
 
 数学函数在 glTF 2.0 规范的附录 C 中进行了描述。
 
-Here's a corresponding pseudocode snippet : 
+Here's a corresponding pseudocode snippet :
 
 这是一个相应的伪代码片段：
 
@@ -294,9 +288,6 @@ Here's a corresponding pseudocode snippet :
         t = interpolationValue
         t2 = t * t
         t3 = t2 * t
-        
-        return (2 * t3 - 3 * t2 + 1) * previousPoint + (t3 - 2 * t2 + t) * previousTangent + (-2 * t3 + 3 * t2) * nextPoint + (t3 - t2) * nextTangent;
+                return (2 * t3 - 3 * t2 + 1) * previousPoint + (t3 - 2 * t2 + t) * previousTangent + (-2 * t3 + 3 * t2) * nextPoint + (t3 - t2) * nextTangent;
 ```
-
-
 Previous: [Simple Animation](gltfTutorial_006_SimpleAnimation.md) | [Table of Contents](README.md) | Next: [Simple Meshes](gltfTutorial_008_SimpleMeshes.md)
